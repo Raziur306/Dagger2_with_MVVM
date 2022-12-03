@@ -10,6 +10,6 @@ class FackerApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         DynamicColors.applyToActivitiesIfAvailable(this);
-        applicationComponent = DaggerApplicationComponent.builder().build()
+        applicationComponent = DaggerApplicationComponent.factory().create(this)
     }
 }
