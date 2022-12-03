@@ -6,8 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.eritlab.dagger2.models.Product
 import com.eritlab.dagger2.repository.MainRepository
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(private val repository: MainRepository) : ViewModel() {
+class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
     init {
         viewModelScope.launch {
             repository.getProduct()
